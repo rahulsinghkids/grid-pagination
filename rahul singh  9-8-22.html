@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+	
+  <style type="text/css">
+
+  @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Roboto Mono";
+ 
+  scroll-behavior: smooth;
+}
+section {
+  height: 100vh;
+  width: 100%;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  border:black double 5px;
+}
+#home {
+  background-color: royalblue;
+}
+#about {
+  background-color: aquamarine;
+}
+#footer {
+  background-color: crimson;
+}
+nav {
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+nav .container {
+	border:red double .6vw;
+  width: 100%;
+ 
+  margin: auto;
+  text-align: center;
+ 
+}
+nav .container ul li {
+  display: inline-block;
+   padding: 2vw;
+}
+nav .container ul li a {
+	font-size: 5vw;
+  display: inline-block;
+  text-decoration: none;
+  padding: 3vw 3vw;
+  color: black;
+}
+nav .container ul li.active {
+  background-color: crimson;
+  transition: 0.3s ease background-color;
+}
+nav .container ul li.active a {
+  color: rgb(255, 255, 255);
+}
+
+  	
+
+  </style>
+</head>
+<body>
+ <nav >
+ 	<div class="container">
+ 		
+ 		<ul class="list-group">
+ 			
+				<li class="home"><a  href="#home">HOME</a></li>
+			
+			
+				<li class="about"><a  href="#about">ABOUT</a></li>
+				
+			
+			
+				<li class="contact"><a  href="#contact">CONTACT</a></li>
+				
+			
+ 			
+ 			
+ 			
+ 		</ul>
+ 			
+ 			
+ 	</div>
+
+ </nav>
+ <section id="home" class="container">
+ 	<h1>HOME</h1>
+ </section>
+ <section id="about" class="container">
+ 	<h1>ABOUT</h1>
+ </section>
+ <section id="contact" class="container">
+ 	<h1>CONTACT</h1>
+ </section>
+
+ <script type="text/javascript">
+ 	
+ 	const sections = document.querySelectorAll("section");
+ 	const navLi = document.querySelectorAll("nav .container ul li");
+
+ 	window.addEventListener("scroll", () =>
+ 	{
+ 		let current = "";
+
+ 		sections.forEach((section) =>
+ 		{
+ 			const sectionTop = section.offsetTop;
+ 			const sectionHeight = section.clientHeight;
+
+ 			if(pageYOffset >= sectionTop - sectionHeight / 3)
+ 			{
+ 				current = section.getAttribute("id");
+ 			}
+
+ 			
+ 		});
+
+ 	    navLi.forEach((li) =>
+ 	    {
+ 	    	li.classList.remove("active");
+ 	    	if(li.classList.contains(current))
+ 	    	{
+ 	    		li.classList.add("active");
+ 	    	}
+
+ 	    });
+ 		
+
+
+
+
+
+ 	});
+ </script>
+
+</body>
+</html>

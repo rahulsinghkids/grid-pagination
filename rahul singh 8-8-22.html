@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		.ee{
+			height: 30px;
+			width: auto;
+			background-color: grey;
+			color: red;
+			font-style: italic;
+			font-family: algerian;
+
+		}
+		#qq{
+			color: red;
+			
+			margin-left: 350px;
+			margin-top: 50px;
+			font-size: 30px;
+		}
+		#ww{
+			background-color: yellow;
+			font-style: italic;
+			font-weight: 700;
+
+		}
+		#cx{
+			color: white;
+			background-color: black;
+			font-size: 50px;
+			font-style: italic;
+			text-align: center;
+		}
+	</style>
+	<title></title>
+</head>
+<body>
+	<div class="ee">
+		<h2>WELCOME TO THE QUADWAVE PVT. LTD.</h2>
+	</div>
+	
+	<h1 id="cx">REGISTRATION FORM</h1>
+	<form id="qq">
+		<table border="2" id="ww">
+			<tr>
+				<th>ENTER FIRST NAME:</th>
+				<td><input id="first" type="text" name=""></td>
+			</tr>
+			<tr>
+				<th>ENTER LAST NAME:</th>
+				<td><input id="last" type="text" name=""></td>
+			</tr>
+			<tr>
+				<th>ENTER CITY:</th>
+				<td><select>
+					<option>AGRA</option>
+					<option>PUNE</option>
+					<option>BANGALORE</option>
+					<option>NOIDA</option>
+				</select></td>
+			</tr>
+			<tr>
+				<th>ENTER MOBILE NUMBER</th>
+				<td><input id="num" type="text" name=""></td>
+			</tr>
+			<tr >
+				<th colspan="2"><button onclick="rahul()">SUBMIT</button></th>
+				
+			</tr>
+			
+
+		</table>
+	</form>
+	<br><br><br><br>
+	<br><br><br><br>
+	<div class="ee">
+		<h2>RAHUL SINGH , JAVA DEVELOPER , QUADWAVE CONSULTING PVT LTD, PUNE , MAHARASTRA</h2>
+	</div>
+
+	<script type="text/javascript">
+		function containsSpecialChars(str)
+		 {
+           const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~1234567890]/;
+           return specialChars.test(str);
+         }
+
+         
+		function rahul()
+		{
+			var fir = document.getElementById("first").value;
+			var last = document.getElementById("last").value;
+			var numm = document.getElementById("num").value;
+			const spl = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~qwertyuiopasdfghjklzxcvbnm]/;
+			
+			
+			 
+
+			
+			
+			if (containsSpecialChars(fir)) 
+               {
+               	window.alert("Invalid first name");
+          
+              }
+              else if(fir == "")
+              {
+              	window.alert("first name cant be empty");
+
+              }
+
+              else if(last == "")
+              {
+              	window.alert("last name cant be empty");
+
+              }
+
+			
+			else if(containsSpecialChars(last))
+			{
+				window.alert("Invalid last name");
+
+			}
+			else if (numm == "")
+			 {
+			 	window.alert("NUMBER REQUIRED");
+
+			}
+			else if(numm.length <10 )
+			{
+				window.alert("NUMBER SHOULD BE OF 10 DIGITS");
+
+			}
+			else if(numm.length >10 )
+			{
+				window.alert("NUMBER SHOULD BE OF 10 DIGITS");
+
+			}
+			else if(spl.test(numm))
+			{
+				window.alert("INVALID NUMBER");
+
+			}
+
+			else
+			{
+				window.alert("WELCOME TO QUADWAVE");
+
+			}
+
+
+
+			
+			
+				
+			
+
+
+
+			
+
+
+		
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		.ee{
+			height: 30px;
+			width: auto;
+			background-color: yellow;
+			color: red;
+			font-style: italic;
+			font-family: algerian;
+
+		}
+		#qq{
+			background-color: yellow;
+			color: red;
+			font-size: 20px;
+			font-style: italic;
+			font-family: algerian;
+			margin-left: 200px;
+			margin-top: 50px;
+		}
+	</style>
+	<title></title>
+</head>
+<body>
+	<div class="ee">
+		<h2>WELCOME TO THE QUADWAVE PVT. LTD.</h2>
+	</div>
+	<form>
+		<table border="2" id="qq">
+			<tr>
+				<td>ENTER USER NAME:</td>
+				<td><input id="user" type="text" ></td>
+			</tr>
+			<tr>
+				<td>ENTER PASSWORD:</td>
+				<td><input id="pass" type="password" ></td>
+			</tr>
+			<tr>
+				<td><button onclick="check()">LOGIN</button></td>
+				<td><button>RESET</button></td>
+			</tr>
+		</table>
+	</form>
+	<div class="ee">
+		<h2>usename = rahul ..........   password = 12345</h2>
+	</div>
+
+
+
+
+
+	<div class="ee">
+		<h2>RAHUL SINGH , JAVA DEVELOPER , QUADWAVE CONSULTING PVT LTD, PUNE , MAHARASTRA</h2>
+	</div>
+	<script type="text/javascript">
+		
+		function check()
+		{
+
+			var uid = document.getElementById("user").value;
+			var upass = document.getElementById("pass").value;
+			
+			if(uid == "rahul" && upass == "12345")
+			{
+				alert("login successfully");
+			}
+			else
+			{
+				document.getElementById("user").innerHTML=" ";
+				document.getElementById("pass").innerHTML=" ";
+				alert("wrong id or password");
+			}
+		}
+
+		function clear()
+		{
+			document.getElementById("user").innerHTML=" ";
+				document.getElementById("pass").innerHTML=" ";
+
+		}
+	</script>
+
+</body>
+</html>

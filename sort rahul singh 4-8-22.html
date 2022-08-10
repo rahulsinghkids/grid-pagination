@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		
+		li{
+			color: red;
+			font-size: 30px;
+			font-style: italic;
+			font-weight: 700;
+
+		}
+		#qq{
+			height: 30px;
+			width: auto;
+			background-color: yellow;
+			color: red;
+			font-size: 30px;
+			font-weight: 700;
+			font-style: italic;
+		}
+		#ww{
+			height: 400px;
+			width: 200px;
+			background-color: pink;
+			border:red  solid 4px;
+			margin-left: 100px;
+			margin-top: 100px;
+		}
+		#ee{
+			height: 30px;
+			width: auto;
+			background-color: yellow;
+			color: red;
+			font-size: 20px;
+			font-weight: 700;
+			font-style: italic;
+			margin-top: 50px;
+
+		}
+		#qw{
+			font-size: 20px;
+			font-style: italic;
+			font-weight: 700;
+			color: magenta;
+		}
+	</style>
+	<title></title>
+</head>
+<body>
+
+	<div id="qq">
+		WELCOME TO QUADWAVE CONSULTING PVT LTD
+	</div>
+	<div id="ww">
+		<ul id="listitem">
+		<li>rahul</li>
+		<li>rohit</li>
+		<li>ankit</li>
+		<li>vivek</li>
+		<li>praful</li>
+		<li>ruchi</li>
+		<li>satya</li>
+		<li>shekhar</li>
+	</ul>
+	<button id="qw" onclick="reverse()">CLICK</button>
+	</div>
+	<footer id="ee">
+		RAHUL SINGH, JAVA DEVELOPER, QUADWAVE CONSULTING PVT LTD, PUNE, MAHARASTRA
+	</footer>
+
+	<script>
+		function reverse()
+		{
+			var i;
+			var count=0;
+			var dir ;
+			var b;
+			var switching;
+			var sw;
+			var list;
+
+			list = document.getElementById("listitem");
+			switching=true;
+			dir="asc";
+			while(switching)
+			{
+
+				switching=false;
+
+				b = list.getElementsByTagName("LI");
+
+				for(i=0 ; i<(b.length-1);i++)
+				{
+					sw=false;
+					if(dir == "asc")
+				    {
+					    if(b[i].innerHTML.toLowerCase()>b[i+1].innerHTML.toLowerCase())
+					     {
+					     	
+					     	sw=true;
+					     	break;
+					     }
+				    }
+				    if(dir == "desc")
+				    {
+					    if(b[i].innerHTML.toLowerCase()<b[i+1].innerHTML.toLowerCase())
+					     {
+					     	
+					     	sw=true;
+					     	break;
+					     }
+				    }
+
+				}
+				if(sw)
+				{
+					 b[i].parentNode.insertBefore(b[i + 1], b[i]);
+					 switching=true;
+					 count++;
+
+
+				}
+				else
+				{
+					if(count == 0 && dir  == "asc")
+					{
+						dir="desc";
+						switching=true;
+
+					}
+				}
+
+				
+
+
+			}
+
+
+		}
+		
+
+
+
+
+	</script>
+
+</body>
+</html>
